@@ -1,0 +1,37 @@
+version: 2
+updates:
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 99
+  reviewers:
+  - localheinz
+  assignees:
+  - localheinz
+  labels:
+  - dependency
+- package-ecosystem: composer
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 99
+  reviewers:
+  - localheinz
+  assignees:
+  - localheinz
+  labels:
+  - dependency
+  versioning-strategy: increase
+  ignore:
+  - dependency-name: nikic/php-parser
+    versions:
+    - ">= 0"
+  - dependency-name: phpstan/phpstan
+    versions:
+    - ">= 0"
+  - dependency-name: zendframework/zend-servicemanager
+    versions:
+    - ">= 0"
